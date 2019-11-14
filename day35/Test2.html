@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    table tr td{
+        width: 150px;
+    }
+</style>
+<body>
+    <table border="1" align="center">
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" id="selectAll">全选
+                <button id="back">反选</button>
+            </td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="checkbox"  class="check"></td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="checkbox" class="check"></td>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="checkbox" class="check"></td>
+            <td>4</td>
+            <td>4</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="checkbox" class="check"></td>
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+    </table>
+</body>
+<script>
+    $(function () {
+        var str = $("table tr:even");
+        str.css("backgroundColor", "gray");
+        $("#selectAll").click(function () {
+            var str = $("#selectAll").prop("checked");
+                if (str){
+                    $(".check").prop("checked",true);
+                } else {
+                    $(".check").prop("checked","");
+                }
+        });
+        $("#back").click(function () {
+            $("#selectAll").prop("checked","");
+            var str = $(".check");
+            for (var i=0;i<str.length;i++){
+                if ($(str[i]).prop("checked")){
+                    $(str[i]).prop("checked",false);
+                } else {
+                    $(str[i]).prop("checked",true);
+                }
+            }
+        });
+    });
+</script>
+</html>

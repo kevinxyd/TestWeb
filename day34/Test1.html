@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .p2{
+        font-size: 50px;
+        color: dimgray;
+    }
+    #info {
+        color: red;
+        width: 150px;
+        height: 150px;
+        background-color: dimgray;
+        display: none;
+    }
+</style>
+
+<body>
+<p id="p" style="color: green">123123</p>
+<p id="p2">类样式</p>
+<button onclick="getstyle()">改变样式</button>
+<button onclick="getClass()">改变类样式</button>
+<p id="p3">鼠标移入有惊喜</p>
+<div id="info">您好，我是可隐藏的div</div>
+<button onclick="history.back()">后退</button>
+<button onclick="history.go(-1)">go</button>
+</body>
+
+<script>
+    function getstyle() {
+        document.getElementById("p").style.color = "red";
+    }
+    function getClass() {
+        document.getElementById("p2").className = "p2";
+    }
+    window.onload = function (ev) {
+        document.getElementById("p3").onmouseover = function (ev2) {
+            document.getElementById("info").style.display = "block";
+        }
+        document.getElementById("p3").onmouseout = function (ev2) {
+            document.getElementById("info").style.display = "none";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--轮播图-->
+<img src="img/1.jpg" id = "pic" width="194">
+</body>
+<script type="text/javascript">
+    /*window.setInterval("changePic()",2000);*/
+    window.onload = function (ev) {
+        window.setInterval(changPic,1000);
+
+        var num = 1;
+        function changPic() {
+            var pic = document.getElementById("pic");
+            pic.src = "img/" + num + ".jpg";
+            console.log(pic.src);
+            num++;
+            if (num == 5){
+                num = 1;
+            }
+        }
+    }
+</script>
+</html>

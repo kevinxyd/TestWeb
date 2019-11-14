@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--获取与失去焦点-->
+<input type="text" id="user" />
+<!--改变事件-->
+<select id="a">
+    <option value="1">广州</option>
+    <option value="2">郑州</option>
+    <option value="3">兰州</option>
+</select>
+<!--键盘事件-->
+<input type="text" id="u" />
+</body>
+<script>
+    document.getElementById("user").onfocus = function (ev) {
+        console.log("获取焦点");
+    }
+    document.getElementById("user").onblur = function (ev) {
+        console.log("失去焦点");
+    }
+
+    document.getElementById("a").onchange = function (ev) {
+        console.log(this.value);
+    }
+    /*document.getElementById("u").onkeydown = function (ev) {
+        console.log("键盘按下事件");
+    }*/
+    document.getElementById("u").onkeyup = function (ev) {
+        console.log("键盘松开事件");
+    }
+    document.getElementById("u").onkeydown = function (ev) {
+        var s = ev.keyCode;
+        if (s == 13){
+            console.log("enter");
+        }
+    }
+
+
+</script>
+</html>

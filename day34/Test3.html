@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="h1"></h1>
+<button onclick="begin()" id="begin">开始</button>
+<button onclick="end()" id="pause">暂停</button>
+</body>
+<script>
+    var timer = 0;
+    function begin() {
+        timer = window.setInterval(start,1000);
+        document.getElementById("begin").disabled = true;
+        document.getElementById("pause").disabled = false;
+    }
+    function start() {
+        document.getElementById("h1").innerHTML = new Date().toLocaleString();  //设置现在的时 间
+    }
+    function end() {
+        window.clearInterval(timer);
+        document.getElementById("begin").disabled = false;
+        document.getElementById("pause").disabled = true;
+
+    }
+</script>
+</html>

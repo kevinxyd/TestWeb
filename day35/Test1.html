@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="one">
+    id为one   div
+</div>
+<div id="two" class="mini"  title="test">
+    id为two   class是 mini  div  title="test"
+    <div  class="mini" >
+        class是 mini
+    </div>
+</div>
+<div class="one" title="test02">
+    class是 one    title="test02"
+    <div  class="mini01" >
+        class是 mini01
+    </div>
+    <div  class="mini" style="margin-top:0px;">
+        class是 mini
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        var str = $("div[title=test]").html();
+        console.log(str);
+        var str1 = $("div[title=test02][class=one]").html();
+        console.log(str1);
+        var str2 = $("div[title]");
+        console.log(str2);
+    });
+</script>
+</html>

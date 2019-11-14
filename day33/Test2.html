@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" value="按钮1" id="b1" onclick="clickMe()">
+<input type="text" value="按钮2" id = "b2">
+<input type="text" value="按钮3" id = "b3" ondblclick="ch3()">
+</body>
+<script>
+
+    function clickMe() {
+        alert("我是按钮1");
+    }
+    window.onload = function (ev) {
+        document.getElementById("b2").onclick = function (ev) {
+            alert("我是按钮2");
+        }
+    }
+    function ch3() {
+        alert("我是按钮3")
+    }
+</script>
+</html>

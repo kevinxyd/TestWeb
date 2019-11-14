@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    .a {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+</style>
+<body>
+<input type="button" id="b1" value="添加class">
+<input type="button" id="b2" value="移出class">
+<input type="button" id="b3" value="切换class">
+<input type="button" id="b4" value="清空所有子元素">
+<input type="button" id="b5" value="删除元素">
+<div>
+</div>
+<div>
+    123
+    <p>456</p>
+</div>
+</body>
+<script>
+    $(function () {
+        $("#b1").click(function () {
+            $("div").addClass("a");
+        });
+        $("#b2").click(function () {
+            $("div").removeClass("a");
+        });
+        $("#b3").click(function () {
+            $("div").toggleClass("a");
+        });
+        $("#b4").click(function () {
+            $("div").empty();
+        });
+        $("#b5").click(function () {
+            $("div").remove();
+        });
+
+    });
+</script>
+</html>
